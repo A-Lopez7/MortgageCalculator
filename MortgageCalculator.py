@@ -1,7 +1,7 @@
 import csv
 from tabulate import tabulate
 
-intro_response = input("Hi! Welcome to Simple Mortgage Calculator. Would you like to calculator your monthly mortgage payment? Yes or No\n")
+intro_response = input("Hi! Welcome to Simple Mortgage Calculator. Would you like to calculate your monthly mortgage payment? Yes or No\n")
 
 def loan_calculator(org_princinple, rate, term):
     schedule = []
@@ -52,4 +52,3 @@ elif intro_response.lower() == "no":
     exit()
 
 
- 
