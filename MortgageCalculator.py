@@ -7,7 +7,7 @@ from tabulate import tabulate
 
 def collect_userinput(): #Collets user information which will be used in the class LoanCalculator
 
-    ask_loan = float(input("What is the loan amount?\n"))
+    ask_loan = float(input("Hi! Welcome to Simple Mortgage Calculator. What is the loan amount?\n"))
     ask_rate = float(input("What is the interest rate\n"))
     ask_term = int(input("What is the term?\n"))
     ask_extra = float(input("Extra monthly payment amount:\n"))
@@ -69,11 +69,9 @@ class LoanCalculator: #Calculates mortgage monthly payments, interest, principal
             self.principal_payment()
             self.balance -= round(self.principal_payment(), 2)
             self.schedule.append({"Month": month + 1, "Monthly Payment": self.monthly_payment(), "Principal Payment": self.principal_payment(), "Interest": self.interest_payment(), "Remaining Balance": self.balance})
-            if self.balance < 0:
-                for item in self.schedule:
-                    for key, value in item.items():
-                        item["Remaining Balance"] = 0
-                    return tabulate(self.schedule, headers="keys", tablefmt="grid")
+            if self.balance < 0 and self.schedule:
+                self.schedule[-1]["Remaining Balance"] = 0
+                return tabulate(self.schedule, headers="keys", tablefmt="grid")
         return tabulate(self.schedule, headers="keys", tablefmt="grid")
 
     def export_to_csv(self):
@@ -85,7 +83,7 @@ class LoanCalculator: #Calculates mortgage monthly payments, interest, principal
                 self.writer = csv.DictWriter(amortization, fieldnames=["Month", "Monthly Payment", "Principal Payment", "Interest", "Remaining Balance"])
                 self.writer.writeheader()
                 self.writer.writerows(self.schedule)
-            return "File has been successfully exported!"
+            return "File has been successfully exported!\n"
         else:
             return "Thank you for using the mortgage app!\n"
 
