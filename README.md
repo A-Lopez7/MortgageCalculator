@@ -15,14 +15,12 @@ This is my first python project - a mortgage calculator.
 Standard mortgage calculator. Provides monthly payment amount given loan amount, interest rate and term. Amortization table is also provided to illustrate portion of principal vs. portion of interest over time. 
 
 ## Features 
--Calculates monthly loan payments
--Generates an amortization schedule 
--Print Summary stats to console
-
-## Roadmap/To-Do
--Extra payment calculator
--Ability to sum total principal vs. total interest given extra payment
--Comparison between different loan options (e.g. 15 years vs. 30 years) 
+- Calculates monthly mortgage payments
+- Generates a full amortization schedule
+- Supports **extra monthly payments** (new in v1.5)
+- Option to export schedule as a `.csv` file
+- Command-line input with user-friendly prompts
+ 
 
 ## Setup Instructions 
 
