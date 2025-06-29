@@ -1,4 +1,4 @@
-# Mortgage Calculator 
+t# Mortgage Calculator 
 
 This is my first python project - a mortgage calculator. 
 
@@ -35,7 +35,7 @@ Standard mortgage calculator. Provides monthly payment amount given loan amount,
    pip install -r requirements.txt
 
 3. Run the calculator
-   python MortgageCalculator.py
+   python3 MortgageCalculator.py
 
 4. Output
  -Terminal displays the amortization table
